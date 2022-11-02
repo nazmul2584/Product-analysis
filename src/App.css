@@ -23,10 +23,15 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.active{
+  color: rgb(223, 10, 145);
+  text-decoration: wavy;
+}
 
 .App-link {
   color: #61dafb;
 }
+
 
 @keyframes App-logo-spin {
   from {
