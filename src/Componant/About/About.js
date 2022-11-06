@@ -10,6 +10,7 @@ const About = () => {
     return (
         <div>
             <h1>about page  {product.length} </h1>
+            
         </div>
     );
 };
