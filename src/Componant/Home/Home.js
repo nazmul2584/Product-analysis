@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import img from '../../img/laptop.jpg'
 const Home = () => {
     return (
@@ -14,7 +15,16 @@ const Home = () => {
                         
                         <img src= {img} alt="" />
                     </div>
+                    
                 </div>
+                     <div className='mt-2'>
+                        <h1> CUSTOMER REVIEW</h1>
+                        <div className='mt-24'>
+                           <Link to= '/Review'>
+                            <button className='bg-rose-400 px-24 py-3 text-white rounded'>see all review</button>
+                           </Link>
+                        </div>
+                    </div>
         </div>
     );
 };
