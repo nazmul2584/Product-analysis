@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import About from '../../Hooks/useCommants';
 import img from '../../img/laptop.jpg'
 const Home = () => {
+
+    const [product,setproducts] =About();
     return (
         <div>
-                <div className='flex'>
+                <div className='flex border border'>
                     <div className='txt-container flex-1 w-1/2 text-5xl mt-9'>
                         
                         <h1 className='mb-5  text-orange-600 font-semibold'>YOER NEXT LAPTOP</h1>
@@ -17,8 +20,8 @@ const Home = () => {
                     </div>
                     
                 </div>
-                     <div className='mt-2'>
-                        <h1> CUSTOMER REVIEW</h1>
+                     <div className='mt-6'>
+                        <h1> CUSTOMER REVIEW {product.length} </h1>
                         <div className='mt-24'>
                            <Link to= '/Review'>
                             <button className='bg-rose-400 px-24 py-3 text-white rounded'>see all review</button>
