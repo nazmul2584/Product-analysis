@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const About = () => {
     const [product,setproducts] = useState([]);
     useEffect(()=>{
-        fetch('https://jsonplaceholder.typicode.com/comments')
+        fetch('https://jsonplaceholder.typicode.com/users')
         .then(res=>res.json())
         .then(data=>setproducts(data))
     },[])

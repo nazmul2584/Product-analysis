@@ -1,10 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import About from '../../Hooks/useCommants';
 import img from '../../img/laptop.jpg'
+import Reviewcart from '../Reviewcart/Reviewcart';
 const Home = () => {
 
     const [product,setproducts] =About();
+    const navigate = useNavigate();
+    const seeallreview = () =>{
+        navigate('/Review');
+    }
+
     return (
         <div>
                 <div className='flex border border'>
@@ -21,11 +27,24 @@ const Home = () => {
                     
                 </div>
                      <div className='mt-6'>
-                        <h1> CUSTOMER REVIEW {product.length} </h1>
+                        <h1 className='text-green-500'> CUSTOMER REVIEW {product.length} </h1>
+                        <div className='grid grid-cols-4 gap-4 text-left mt-6 mr-5'>
+           
+           {
+            product.map(product=><Reviewcart
+                 key= {product.id} 
+                 product = {product}
+                
+                 
+                 ></Reviewcart>)
+            
+           }
+           
+        </div>
                         <div className='mt-24'>
-                           <Link to= '/Review'>
-                            <button className='bg-rose-400 px-24 py-3 text-white rounded'>see all review</button>
-                           </Link>
+                           
+                            <button onClick={seeallreview} className='bg-rose-400 px-24 py-3 text-white rounded'>see all review</button>
+                           
                         </div>
                     </div>
         </div>
